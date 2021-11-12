@@ -27,6 +27,8 @@ const registerBook = async (req, res) => {
     price: req.body.price,
   });
 
+  console.log(req);
+
   //Va a la base de datos y guarda los campos de JSON
   const result = await bookSchema.save();
   if (!result) return res.status(400).send("Failed to register");
@@ -88,5 +90,7 @@ const deleteBook = async (req, res) => {
     ? res.status(400).send("Book no found")
     : res.status(200).send("Book deleted");
 };
+
+
 
 export default { registerBook, listBook, updateBook, deleteBook };
