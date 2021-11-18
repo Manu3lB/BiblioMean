@@ -8,7 +8,7 @@ router.post("/registerCustomer", customer.registerCustomer);
 router.get("/listCustomer", customer.listCustomer);
 router.put("/updateCustomer", customer.updateCustomer);
 router.delete("/deleteCustomer/:_id", customer.deleteCustomer);
-router.get("/findUser/:_id", customer.findCustomer);
+router.get("/findCustomer/:_id", customer.findCustomer);
 router.post("/loginCustomer", customer.login);
 
 export default router;

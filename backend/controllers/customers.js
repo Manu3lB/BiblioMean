@@ -109,8 +109,9 @@ const findCustomer = async (req, res) => {
 
 const login = async (req, res) => {
   //Validar si vienen los datos de email y password, si no saldra un mensaje
-  if(!req.body.email || req.body.password)
+  if(!req.body.email || !req.body.password)
   return res.status(400).send({ message: "Incomplete data"});
+  
   //Validar si el correo existe
   const customerLogin = await customer.findOne({ email: req.body.email });
   if(!customerLogin)

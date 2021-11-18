@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import book from "./routes/book.js";
 import customer from "./routes/customers.js";
 import vendor from "./routes/vendors.js";
+import admin from "./routes/admin.js";
 
 //Ejecuta esta linea y detecta el archivo .env para usar las variables de entorno
 dotenv.config();
@@ -17,6 +18,7 @@ app.use(cors());
 app.use("/api/book", book);
 app.use("/api/customer", customer);
 app.use("/api/vendor", vendor);
+app.use("/api/admin", admin);
 //Listen nos sirve para conectarnos a los puertos de Express
 //Para colococar un mensaje que no sea una variable tenemos que colococar esto () => console.log("")
 app.listen(process.env.PORT, () =>

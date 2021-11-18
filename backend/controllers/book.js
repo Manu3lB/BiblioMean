@@ -91,6 +91,12 @@ const deleteBook = async (req, res) => {
     : res.status(200).send("Book deleted");
 };
 
+//Función para buscar por ID del libro
+const findBook = async (req, res) => {
+  const bookId = await book.findById({ _id: req.params["_id"] });
+  return !bookId
+    ? res.status(400).send({ message: "No search results" })
+    : res.status(200).send({ bookId });
+};
 
-
-export default { registerBook, listBook, updateBook, deleteBook };
+export default { registerBook, listBook, updateBook, deleteBook, findBook };
